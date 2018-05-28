@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+	<script>
+		window.onload = function () {
+			var clock = document.getElementById('clock');
+			setInterval(function() {
+				var now = new Date();
+				var year = now.getFullYear();
+				var month = now.getMonth() + 1;
+				var day = now.getDay();
+				var hour = now.getHours();
+				var minute = now.getMinutes();
+				var second = now.getSeconds();
+				if (hour < 12){
+				clock.innerHTML = year+"년"+month+"월 "+"오전"+hour+"시"+minute+"분"+second+"초";
+				}
+				if (12 <= hour){
+				clock.innerHTML = year+"년"+month+"월 "+"오후"+hour+"시"+minute+"분"+second+"초";
+				}
+			}, 1000);
+		};
+	</script>
+</head>
+<body>
+	<h3 id="clock"></h3>
+</body>
+</html>
